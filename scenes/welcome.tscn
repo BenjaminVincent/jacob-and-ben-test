@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cdv42netbkyxg"]
+
+[node name="Node2D" type="Node2D" unique_id=1985204583]
+
+[node name="Label" type="Label" parent="." unique_id=1674784928]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(0.09803922, 0.6, 0.3019608, 1)
+text = "Jacob and Ben's Project"
+horizontal_alignment = 1
+vertical_alignment = 1
