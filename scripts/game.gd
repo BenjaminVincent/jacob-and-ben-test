@@ -23,4 +23,6 @@ func _ready() -> void:
 	
 	add_child(ball)
 	
+	ball.start(ball.position, [-1, 1].pick_random())
+	
 	#Start!
