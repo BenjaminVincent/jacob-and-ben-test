@@ -1,49 +1,57 @@
 [gd_scene format=3 uid="uid://j1jo4f0d0y1m"]
 
-[node name="Start" type="Node2D" unique_id=1139917823]
+[ext_resource type="Script" uid="uid://iqkow3ba12fk" path="res://scripts/start.gd" id="1_jaeev"]
 
-[node name="Control" type="Control" parent="." unique_id=1146034113]
+[node name="Start" type="Control" unique_id=658321642]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_jaeev")
+
+[node name="Background" type="ColorRect" parent="." unique_id=119810418]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
 
-[node name="Label" type="Label" parent="Control" unique_id=544866138]
+[node name="Title" type="Label" parent="." unique_id=544866138]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -78.5
-offset_right = 20.0
-offset_bottom = -55.5
+offset_left = 529.5
+offset_top = 234.5
+offset_right = 622.5
+offset_bottom = 279.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "PONG"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1882450999]
+[node name="UIContainer" type="VBoxContainer" parent="." unique_id=1882450999]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.5
-offset_top = -33.0
-offset_right = 76.5
-offset_bottom = 33.0
+offset_left = 499.5
+offset_top = 291.0
+offset_right = 652.5
+offset_bottom = 357.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=1222796081]
+[node name="Play" type="Button" parent="UIContainer" unique_id=1222796081]
 layout_mode = 2
-text = "Start"
+text = "Play"
 
-[node name="Button2" type="Button" parent="Control/VBoxContainer" unique_id=1702800878]
+[node name="Quit" type="Button" parent="UIContainer" unique_id=1702800878]
 layout_mode = 2
 text = "Quit
 "
+
+[connection signal="pressed" from="UIContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="UIContainer/Quit" to="." method="_on_quit_pressed"]
