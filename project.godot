@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JacobAndBenTestProject"
-run/main_scene="uid://cdv42netbkyxg"
+run/main_scene="uid://j1jo4f0d0y1m"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
