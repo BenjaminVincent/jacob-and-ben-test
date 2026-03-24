@@ -3,8 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dp5xppof63rrv" path="res://scenes/player/paddle.tscn" id="1_8fg17"]
 [ext_resource type="Script" uid="uid://lbvyfrtdranm" path="res://scripts/game.gd" id="1_15nd6"]
 
-[node name="Game" type="Node2D" unique_id=1041247027]
-position = Vector2(1, 1)
+[node name="Node2D" type="Node2D" unique_id=1041247027]
 script = ExtResource("1_15nd6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=429021341]
