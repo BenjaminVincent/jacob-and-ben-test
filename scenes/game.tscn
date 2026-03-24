@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dvw4xww544umq"]
-
-[node name="Node2D" type="Node2D" unique_id=1041247027]
-
-[node name="TextEdit" type="TextEdit" parent="." unique_id=117961312]
-offset_right = 1159.0
-offset_bottom = 502.0
-text = "Game Scene!"

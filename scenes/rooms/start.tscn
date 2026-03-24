@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://j1jo4f0d0y1m"]
 
-[ext_resource type="Script" uid="uid://iqkow3ba12fk" path="res://scripts/start.gd" id="1_jaeev"]
+[ext_resource type="Script" uid="uid://iqkow3ba12fk" path="res://scripts/start.gd" id="1_fri35"]
 
 [node name="Start" type="Control" unique_id=658321642]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_jaeev")
+script = ExtResource("1_fri35")
 
 [node name="Background" type="ColorRect" parent="." unique_id=119810418]
 layout_mode = 0
