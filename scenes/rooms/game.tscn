@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://lbvyfrtdranm" path="res://scripts/game.gd" id="1_15nd6"]
 
 [node name="Game" type="Node2D" unique_id=1041247027]
-position = Vector2(1, 1)
 script = ExtResource("1_15nd6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=429021341]
@@ -13,6 +12,7 @@ offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
 [node name="P1" parent="." unique_id=1909393524 instance=ExtResource("1_8fg17")]
+position = Vector2(0, 126)
 
 [node name="P2" parent="." unique_id=1984374026 instance=ExtResource("1_8fg17")]
 position = Vector2(1139, 437)

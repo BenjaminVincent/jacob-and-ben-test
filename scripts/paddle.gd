@@ -6,6 +6,8 @@ var screen_size
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
+
+
 func _process(delta) -> void:
 	
 	screen_size = get_viewport_rect().size
@@ -20,3 +22,8 @@ func _process(delta) -> void:
 		position.y += p2_dir.y * speed * delta
 
 	position.y = clamp(position.y, 0, screen_size.y - collision_shape_2d.shape.size.y)
+
+
+
+#func _physics_process(delta: float) -> void:
+	#print("velocity:" , velocity)
