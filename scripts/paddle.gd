@@ -18,6 +18,8 @@ func get_input():
 	else:
 		input_dir = p2_input
 	
+	input_dir.x = 0
+	
 	velocity = input_dir * speed
 
 
