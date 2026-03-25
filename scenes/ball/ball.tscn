@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cjnhxxvtjhl6y"]
 
 [ext_resource type="Script" uid="uid://3rfaklidqyy8" path="res://scripts/ball.gd" id="1_oqv3d"]
+[ext_resource type="AudioStream" uid="uid://dnfromj5yixm4" path="res://audio/pong_hit_sound.mp3" id="2_nv6q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a6bx"]
 size = Vector2(14, 14)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_stoaj"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("2_nv6q1")
 
 [node name="Ball" type="CharacterBody2D" unique_id=287206727]
 script = ExtResource("1_oqv3d")
@@ -16,3 +22,7 @@ polygon = PackedVector2Array(0, 0, 14, 0, 14, 14, 0, 14)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=746337330]
 position = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_5a6bx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1774677076]
+stream = SubResource("AudioStreamRandomizer_stoaj")
+volume_db = -3.0

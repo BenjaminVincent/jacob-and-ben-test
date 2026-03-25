@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cgtd4nj0awc6o"]
+
+[ext_resource type="Script" uid="uid://bhwsp71xbx0bv" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+
+[node name="PauseMenu" type="Control" unique_id=1732464561]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n87rw")
+
+[node name="Background" type="ColorRect" parent="." unique_id=921745300]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1560518289]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -89.5
+offset_right = 46.5
+offset_bottom = -44.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "PAUSED"
+
+[node name="UIContainer" type="VBoxContainer" parent="." unique_id=926732421]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -33.0
+offset_right = 21.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="UIContainer" unique_id=1131818573]
+layout_mode = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="UIContainer" unique_id=1794086501]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="UIContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="UIContainer/Quit" to="." method="_on_quit_pressed"]

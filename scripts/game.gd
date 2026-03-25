@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var p_1_score: Label = $UI/P1Score
 @onready var p_2_score: Label = $UI/P2Score
+@onready var pause_menu: Control = $UI/PauseMenu
+
+
 @onready var screen_size = get_viewport_rect().size
 
 var ball
@@ -9,11 +12,20 @@ var ball_collider
 var p1_score = 0
 var p2_score = 0
 
+
+
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
-			get_tree().quit()
-
+			#get_tree().quit()
+			pause_menu.visible = not pause_menu.visible
+			
+			if pause_menu.visible:
+				get_tree().paused = true
+			else:
+				get_tree().paused = false
+				
+			#print("pause game!")
 
 
 func _ready() -> void:

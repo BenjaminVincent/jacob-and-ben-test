@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://iqkow3ba12fk" path="res://scripts/start.gd" id="1_fri35"]
 
 [node name="Start" type="Control" unique_id=658321642]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fri35")

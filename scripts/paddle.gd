@@ -23,7 +23,11 @@ func get_input():
 
 
 func _physics_process(delta):
+	
 	get_input()
+	
 	move_and_collide(velocity * delta)
+	
 	var rect = get_viewport_rect()
+	
 	global_position = global_position.clamp(rect.position, rect.end - collision_shape_2d.shape.size)
