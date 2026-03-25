@@ -4,10 +4,8 @@ extends Node2D
 @onready var p_2_score: Label = $UI/P2Score
 @onready var screen_size = get_viewport_rect().size
 
-#func _ready() -> void:
-	#print("size: ", $ColorRect.size)
 var ball
-
+var ball_collider
 var p1_score = 0
 var p2_score = 0
 
@@ -26,6 +24,8 @@ func _ready() -> void:
 	
 	add_child(ball)
 	
+	ball_collider = ball.get_node_or_null("CollisionShape2D")
+	
 	reset_ball([-1, 1].pick_random())
 	
 	#Start!
@@ -42,6 +42,8 @@ func _physics_process(_delta: float) -> void:
 		if ball.position.x > get_viewport_rect().size.x:
 			update_score("p1")
 			reset_ball(-1)
+		if ball.position.y <= 0 || ball.position.y >= get_viewport_rect().size.y - ball_collider.shape.size.y:
+			ball.velocity.y *= -1
 
 
 

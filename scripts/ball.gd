@@ -19,7 +19,7 @@ func start(_position, direction):
 	print("velocity: ", velocity)
 	position = _position
 	#velocity = Vector2(speed, 0).rotated(rotation)
-	velocity = Vector2(speed * direction, 0)
+	velocity = Vector2(speed * direction, 100)
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
@@ -27,9 +27,3 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 		if collision.get_collider().has_method("hit"):
 			collision.get_collider().hit()
-
-
-
-func _on_VisibilityNotifier2D_screen_exited():
-	#signal to score a point
-	queue_free()
