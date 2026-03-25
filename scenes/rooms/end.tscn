@@ -1,3 +1,58 @@
 [gd_scene format=3 uid="uid://b21207bbti1d6"]
 
-[node name="End" type="Node2D" unique_id=1983367402]
+[ext_resource type="Script" uid="uid://5inuu7v85hyh" path="res://scripts/end.gd" id="1_fe40i"]
+
+[node name="End" type="Control" unique_id=1404072567]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fe40i")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1889130289]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
+
+[node name="Title" type="Label" parent="." unique_id=879500814]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 529.5
+offset_top = 234.5
+offset_right = 622.5
+offset_bottom = 279.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Winner: P1"
+
+[node name="UIContainer" type="VBoxContainer" parent="." unique_id=946876441]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 499.5
+offset_top = 291.0
+offset_right = 652.5
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayAgain" type="Button" parent="UIContainer" unique_id=593896648]
+layout_mode = 2
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="UIContainer" unique_id=692784433]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="UIContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="UIContainer/Quit" to="." method="_on_quit_pressed"]

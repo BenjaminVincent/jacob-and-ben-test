@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dp5xppof63rrv" path="res://scenes/player/paddle.tscn" id="1_8fg17"]
 [ext_resource type="Script" uid="uid://lbvyfrtdranm" path="res://scripts/game.gd" id="1_15nd6"]
-[ext_resource type="PackedScene" uid="uid://cgtd4nj0awc6o" path="res://scenes/pause_menu.tscn" id="3_qbjnx"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="3_qbjnx"]
+[ext_resource type="PackedScene" uid="uid://b21207bbti1d6" path="res://scenes/rooms/end.tscn" id="4_53i6v"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_15nd6"]
 color = Color(1, 1, 1, 1)
@@ -60,4 +61,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PauseMenu" parent="UI" unique_id=1732464561 instance=ExtResource("3_qbjnx")]
+visible = false
+
+[node name="End" parent="UI" unique_id=1404072567 instance=ExtResource("4_53i6v")]
 visible = false

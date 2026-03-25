@@ -8,7 +8,6 @@ var screen_size
 
 
 func start(_position, direction):
-	print("velocity: ", velocity)
 	position = _position
 	velocity = Vector2(speed * direction, 100)
 

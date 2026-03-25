@@ -3,6 +3,7 @@ extends Node2D
 @onready var p_1_score: Label = $UI/P1Score
 @onready var p_2_score: Label = $UI/P2Score
 @onready var pause_menu: Control = $UI/PauseMenu
+@onready var end: Control = $UI/End
 
 
 @onready var screen_size = get_viewport_rect().size
@@ -11,6 +12,7 @@ var ball
 var ball_collider
 var p1_score = 0
 var p2_score = 0
+var end_score
 
 
 
@@ -30,6 +32,9 @@ func _input(event):
 
 func _ready() -> void:
 	
+	if get_tree().paused:
+		get_tree().paused = false
+	
 	ball = load("res://scenes/ball/ball.tscn").instantiate()
 	
 	ball.position = Vector2(screen_size.x /2, screen_size.y /2)
@@ -37,6 +42,8 @@ func _ready() -> void:
 	add_child(ball)
 	
 	ball_collider = ball.get_node_or_null("CollisionShape2D")
+	
+	end_score = end.get_node_or_null("Title")
 	
 	reset_ball([-1, 1].pick_random())
 	
@@ -68,7 +75,15 @@ func update_score(player_score) -> void:
 		"p2":
 			p2_score += 1
 			p_2_score.text = str(p2_score)
-			
+	
+	if p2_score >= 7:
+		end_score.text = "Winner: P2"
+		end.show()
+		get_tree().paused = true
+	
+	if p1_score >= 7:
+		end.show()
+		get_tree().paused = true
 
 
 func reset_ball(start_direction) -> void:
