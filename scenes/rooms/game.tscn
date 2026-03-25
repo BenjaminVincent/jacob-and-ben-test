@@ -3,6 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dp5xppof63rrv" path="res://scenes/player/paddle.tscn" id="1_8fg17"]
 [ext_resource type="Script" uid="uid://lbvyfrtdranm" path="res://scripts/game.gd" id="1_15nd6"]
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_15nd6"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 3
+vertical = true
+
 [node name="Game" type="Node2D" unique_id=1041247027]
 script = ExtResource("1_15nd6")
 
@@ -16,3 +23,37 @@ position = Vector2(0, 126)
 
 [node name="P2" parent="." unique_id=1984374026 instance=ExtResource("1_8fg17")]
 position = Vector2(1139, 437)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1591278901]
+
+[node name="VSeparator" type="VSeparator" parent="UI" unique_id=284542917]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -5.0
+offset_top = 10.0
+offset_right = 5.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_15nd6")
+
+[node name="P1Score" type="Label" parent="UI" unique_id=494265291]
+offset_left = 534.0
+offset_top = 10.0
+offset_right = 574.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2Score" type="Label" parent="UI" unique_id=1176622868]
+offset_left = 577.0
+offset_top = 10.0
+offset_right = 617.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
