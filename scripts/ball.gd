@@ -20,3 +20,4 @@ func _physics_process(delta):
 		velocity = velocity.bounce(collision.get_normal())
 		if collision.get_collider().has_method("hit"):
 			collision.get_collider().hit()
+#sup gamers
